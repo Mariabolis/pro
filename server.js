@@ -9,7 +9,7 @@ const port = 3000;
 app.use(bodyParser.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '')));
 
 // MongoDB Connection
 mongoose.connect('mongodb://localhost:27017/locationDB', {
@@ -33,7 +33,7 @@ const Location = mongoose.model('Location', locationSchema);
 
 // Default route to serve the index.html file
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, '', 'index.html'));
 });
 
 // Route for receiving location data
