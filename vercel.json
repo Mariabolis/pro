@@ -1,0 +1,7 @@
+{
+    "outputDirectory": "",
+    "rewrites": [
+      { "source": "/receive-location", "destination": "/app.js" }
+    ]
+  }
+  
